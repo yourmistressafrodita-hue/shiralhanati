@@ -107,19 +107,19 @@
   --color-text-inverse:   #FAFAF8;
 
   /* Primary — Coral/Orange */
-  --color-primary:        #E8573A;
-  --color-primary-hover:  #D14A30;
-  --color-primary-active: #B83D25;
-  --color-primary-light:  #FEF0EC;
+  --color-primary:        #E8720C;
+  --color-primary-hover:  #CC6309;
+  --color-primary-active: #B05507;
+  --color-primary-light:  #FEF3E8;
 
   /* Accent — Electric Blue */
-  --color-accent:         #2563EB;
-  --color-accent-hover:   #1D4ED8;
-  --color-accent-light:   #EFF6FF;
+  --color-accent:         #1A6FBF;
+  --color-accent-hover:   #155A9E;
+  --color-accent-light:   #EBF4FF;
 
   /* Tertiary — Vibrant Purple */
-  --color-tertiary:       #8B5CF6;
-  --color-tertiary-light: #F5F3FF;
+  --color-tertiary:       #0F9B6E;
+  --color-tertiary-light: #E8F9F4;
 
   /* Success */
   --color-success:        #16A34A;
@@ -148,8 +148,8 @@
   --color-text-inverse:   #0F0E0D;
 
   --color-primary:        #F07A62;
-  --color-primary-hover:  #E8573A;
-  --color-primary-active: #D14A30;
+  --color-primary-hover:  #E8720C;
+  --color-primary-active: #CC6309;
   --color-primary-light:  #2A1A16;
 
   --color-accent:         #60A5FA;
@@ -180,8 +180,8 @@
     --color-text-faint:     #5A5755;
     --color-text-inverse:   #0F0E0D;
     --color-primary:        #F07A62;
-    --color-primary-hover:  #E8573A;
-    --color-primary-active: #D14A30;
+    --color-primary-hover:  #E8720C;
+    --color-primary-active: #CC6309;
     --color-primary-light:  #2A1A16;
     --color-accent:         #60A5FA;
     --color-accent-hover:   #3B82F6;
@@ -836,13 +836,13 @@
 
 /* Project card gradient backgrounds */
 .project-card-bg-1 {
-  background: linear-gradient(135deg, #E8573A, #F59E0B, #E8573A);
+  background: linear-gradient(135deg, #E8720C, #F59E0B, #E8720C);
   background-size: 200% 200%;
   animation: gradient-shift 6s ease infinite;
 }
 
 .project-card-bg-2 {
-  background: linear-gradient(135deg, #2563EB, #8B5CF6, #2563EB);
+  background: linear-gradient(135deg, #1A6FBF, #0F9B6E, #1A6FBF);
   background-size: 200% 200%;
   animation: gradient-shift 6s ease infinite;
   animation-delay: 1s;
@@ -856,7 +856,7 @@
 }
 
 .project-card-bg-4 {
-  background: linear-gradient(135deg, #8B5CF6, #EC4899, #8B5CF6);
+  background: linear-gradient(135deg, #0F9B6E, #EC4899, #0F9B6E);
   background-size: 200% 200%;
   animation: gradient-shift 6s ease infinite;
   animation-delay: 3s;
