@@ -9,14 +9,12 @@
 </head>
 <body>
     <div class="grid-background"></div>
-    
     <header class="header">
         <div class="logo">SHIR ALHANATI</div>
         <nav>
             <button id="langToggle" aria-label="Switch language">עב</button>
         </nav>
     </header>
-
     <main>
         <section class="hero">
             <div class="hero-content">
@@ -39,7 +37,6 @@
         <section id="work">
             <div class="section-tag" data-en="Selected Projects" data-he="פרויקטים נבחרים">Selected Projects</div>
             <h2 class="section-title fade-in" data-en="Work" data-he="עבודות">Work</h2>
-            
             <div class="projects-grid">
                 <a href="https://maison-noir-shir.netlify.app/" class="project-card fade-in" target="_blank">
                     <div class="project-img"></div>
@@ -54,17 +51,17 @@
                 <a href="https://ember-and-oak-shir.netlify.app/" class="project-card fade-in" target="_blank">
                     <div class="project-img"></div>
                     <h3 class="project-title">EMBER & OAK</h3>
-                    <p data-en="Fine dining restaurant" data-he="מסעדת יוקרה">Fine dining restaurant</pRestore Portfolio and About with full dark redesign
-                </aRestore Portfolio and About with full dark redesign
-    Restore Portfolio and About with full dark redesign
-        </sectRestore full layout with Portfolio and About sectionsRestore full layout with Portfolio and About sections
+                    <p data-en="Fine dining restaurant" data-he="מסעדת יוקרה">Fine dining restaurant</p>
+                </a>
+            </div>
+        </section>
+
         <section id="about">
             <div class="section-tag" data-en="The Person" data-he="מי אני">The Person</div>
             <h2 class="section-title fade-in" data-en="About" data-he="אודות">About</h2>
             <div class="hero-subtitle fade-in" style="max-width: 800px;">
-                <p data-en="I'm Shir — a Jerusalem girl now living in Prague. For over a decade, I've been turning dreams into digital reality. I believe a website should be more than a template — it should be a feeling." 
-                   data-he="אני שיר — ירושלמית שחיה כיום בפראג. מעל עשור אני הופכת חלומות למציאות דיגיטלית. אני מאמינה שאתר צריך להיות יותר מתבנית — הוא צריך להיות הרגשה.">
-                   I'm Shir — a Jerusalem girl now living in Prague. For over a decade, I've been turning dreams into digital reality. I believe a website should be more than a template — it should be a feeling.
+                <p data-en="I'm Shir — a Jerusalem girl now living in Prague. For over a decade, I've been turning dreams into digital reality. I believe a website should be more than a template — it should be a feeling." data-he="אני שיר — ירושלמית שחיה כיום בפראג. מעל עשור אני הופכת חלומות למציאות דיגיטלית. אני מאמינה שאתר צריך להיות יותר מתבנית — הוא צריך להיות הרגשה.">
+                    I'm Shir — a Jerusalem girl now living in Prague. For over a decade, I've been turning dreams into digital reality. I believe a website should be more than a feeling.
                 </p>
             </div>
         </section>
@@ -73,7 +70,7 @@
     <script>
         const langBtn = document.getElementById('langToggle');
         let currentLang = 'en';
-        
+
         langBtn.addEventListener('click', () => {
             currentLang = currentLang === 'en' ? 'he' : 'en';
             document.documentElement.setAttribute('lang', currentLang);
