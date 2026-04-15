@@ -319,7 +319,7 @@ const reveals = document.querySelectorAll('.reveal');
 function checkReveals() {
   reveals.forEach(el => {
     const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
+    if (top < window.innerHeight) {
       el.classList.add('active');
     }
   });
