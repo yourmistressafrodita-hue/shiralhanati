@@ -115,7 +115,7 @@ header {
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.hero-card {
+.-card {
   background: var(--card);
   padding: 20px;
   border-radius: 16px;
@@ -123,7 +123,7 @@ header {
   transition: transform 0.3s ease;
 }
 
-.hero-card:hover {
+.-card:hover {
   transform: rotate(-1deg) scale(1.02);
 }
 
@@ -246,7 +246,22 @@ footer {
 
 <div class="hero-card">
   <strong>10+ years experience</strong>
-  <p class="text-muted">Developer + Designer + Marketing mindset</p>
+  <p class="text-muted" style="margin-bottom: 20px;">Developer + Designer + Marketing mindset</p>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 8px;">
+    <div>
+      <div style="font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 2px;">01 — DISCOVERY</div>
+      <div style="font-size: 12px; color: var(--muted);">We talk about your goals and what success looks like.</div>
+    </div>
+    <div>
+      <div style="font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 2px;">02 — STRATEGY & DESIGN</div>
+      <div style="font-size: 12px; color: var(--muted);">UX, UI, and customer journey – built to convert.</div>
+    </div>
+    <div>
+      <div style="font-size: 12px; color: var(--accent); font-weight: 600; margin-bottom: 2px;">03 — BUILD & LAUNCH</div>
+      <div style="font-size: 12px; color: var(--muted);">I develop, connect the tech, and launch with you.</div>
+    </div>
+  </div>
 </div>
 
 </section>
@@ -258,33 +273,6 @@ footer {
   </div>
 </section>
 
-  <section class="section reveal">
-  <div class="section-title">How I work</div>
-  <div class="grid grid-3">
-
-    <div class="card">
-      <div class="project-title">1. Discovery call</div>
-      <div class="project-desc">
-        We talk about your goals, your current store, and what "selling more" means for your business.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="project-title">2. Strategy & design</div>
-      <div class="project-desc">
-        I map the customer journey, design the UX/UI, and plan how the site will convert visitors into buyers.
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="project-title">3. Build & launch</div>
-      <div class="project-desc">
-        I develop the site, connect the tech, and support you through launch so you can start selling with confidence.
-      </div>
-    </div>
-
-  </div>
-</section>
 
 <section class="section reveal">
   <div class="section-title">Selected work</div>
