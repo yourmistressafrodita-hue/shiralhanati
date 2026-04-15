@@ -316,19 +316,19 @@ footer {
 <script>
 const reveals = document.querySelectorAll('.reveal');
 
-window.addEventListener('scroll', () => {
+function checkReveals() {
   reveals.forEach(el => {
     const top = el.getBoundingClientRect().top;
     if (top < window.innerHeight - 100) {
       el.classList.add('active');
     }
   });
-});
+}
 
-// Theme toggle
+window.addEventListener('scroll', checkReveals);
+checkReveals();
+
 const toggleBtn = document.getElementById('theme-toggle');
-
-// קריאה ראשונית – נוכל לשמור העדפה ב-localStorage אם תרצי
 const root = document.documentElement;
 let currentTheme = root.dataset.theme || 'dark';
 
