@@ -367,7 +367,8 @@ footer {
 
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    toggleBtn.textContent = theme === 'light' ? 'Light mode' : 'Dark mode';
+    // הטקסט על הכפתור: מה יקרה *אחרי* שלוחצים
+    toggleBtn.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
   }
 
   applyTheme(currentTheme);
@@ -378,9 +379,8 @@ footer {
     applyTheme(currentTheme);
   });
 
-  // האנימציה של .reveal – תשאירי אם את משתמשת בה:
+  // אם את משתמשת ב-reveal בדף הבית:
   const reveals = document.querySelectorAll('.reveal');
-
   function checkReveals() {
     reveals.forEach(el => {
       const top = el.getBoundingClientRect().top;
@@ -389,7 +389,6 @@ footer {
       }
     });
   }
-
   window.addEventListener('scroll', checkReveals);
   checkReveals();
 </script>
