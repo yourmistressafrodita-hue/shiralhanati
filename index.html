@@ -127,7 +127,8 @@ header {
   transform: rotate(-1deg) scale(1.02);
 }
 
-  .card {
+/* כרטיסי פרויקטים */
+.card {
   background: var(--card);
   padding: 18px;
   border-radius: 14px;
@@ -184,19 +185,6 @@ header {
 
 @media (max-width: 600px) {
   .grid-3 { grid-template-columns: 1fr; }
-}
-
-.card {
-  background: var(--card);
-  padding: 18px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: transform 0.2s ease, border 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .project-title { font-weight: 600; margin-bottom: 6px; }
@@ -302,46 +290,52 @@ footer {
   </div>
 </section>
 
-
 <section class="section reveal">
   <div class="section-title">Selected work</div>
   <p class="text-muted" style="margin-bottom:16px; font-size:13px;">
     Trusted by fashion, SaaS, and hospitality brands.
   </p>
+
   <div class="grid grid-3">
-    
-
     <a class="card" href="https://czech-for-foreigners.netlify.app/" target="_blank">
-  <img class="project-image" src="assets/czech-for-foreigners-screenshot.png" alt="Czech for Foreigners website preview">
-  <div class="project-title">Czech for Foreigners</div>
-  <div class="project-desc">
-    Learning-focused site helping foreigners start speaking Czech with clarity and confidence.
-  </div>
-</a>
+      <img class="project-image"
+           src="assets/czech-for-foreigners-screenshot.png"
+           alt="Czech for Foreigners website preview">
+      <div class="project-title">Czech for Foreigners</div>
+      <div class="project-desc">
+        Learning-focused site helping foreigners start speaking Czech with clarity and confidence.
+      </div>
+    </a>
 
+    <a class="card" href="https://ember-and-oak-pink.vercel.app/" target="_blank">
+      <img class="project-image"
+           src="assets/ember-and-oak-screenshot.png"
+           alt="EMBER & OAK restaurant website preview">
+      <div class="project-title">EMBER & OAK</div>
+      <div class="project-desc">
+        Restaurant website with cinematic feel and fast ordering experience.
+      </div>
+    </a>
 
-<a class="card" href="https://ember-and-oak-pink.vercel.app/" target="_blank">
-  <img class="project-image" src="assets/ember-and-oak-screenshot.png" alt="EMBER & OAK restaurant website preview">
-  <div class="project-title">EMBER & OAK</div>
-  <div class="project-desc">
-    Restaurant website with cinematic feel and fast ordering experience.
-  </div>
-</a>
-
-        <a class="card" href="https://maison-noir-nu.vercel.app/" target="_blank">
-  <img class="project-image" src="assets/maison-noir-screenshot.png" alt="EMBER & OAK restaurant website preview">
-  <div class="project-title">MAISON NOIR</div>
-      <div class="project-desc">Luxury fashion e-commerce with bold identity and smooth shopping flow.</div>
-</a>
-
+    <a class="card" href="https://maison-noir-nu.vercel.app/" target="_blank">
+      <img class="project-image"
+           src="assets/maison-noir-screenshot.png"
+           alt="MAISON NOIR website preview">
+      <div class="project-title">MAISON NOIR</div>
+      <div class="project-desc">
+        Luxury fashion e-commerce with bold identity and smooth shopping flow.
+      </div>
     </a>
 
     <a class="card" href="https://pulse-saas-tau.vercel.app/" target="_blank">
-  <img class="project-image" src="assets/pulse-screenshot.png" alt="EMBER & OAK restaurant website preview">
-  <div class="project-title">PULSE</div>
-      <div class="project-desc">Startup analytics platform with clean UI and structured UX.</div>
-</a>
-
+      <img class="project-image"
+           src="assets/pulse-screenshot.png"
+           alt="PULSE analytics platform preview">
+      <div class="project-title">PULSE</div>
+      <div class="project-desc">
+        Startup analytics platform with clean UI and structured UX.
+      </div>
+    </a>
   </div>
 </section>
 
