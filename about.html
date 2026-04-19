@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Shir Alhanati</title>
+  <style>
+    :root {
+      --bg: #050509;
+      --bg-gradient: radial-gradient(circle at top left, #141424 0, #050509 55%);
+      --text: #f7f7f7;
+      --muted: #a9a9bb;
+      --accent: #f2a33a;
+      --accent-soft: rgba(242, 163, 58, 0.1);
+      --card-bg: rgba(255, 255, 255, 0.02);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --max-width: 960px;
+    }
+
+    [data-theme="light"] {
+      --bg: #f5f5fa;
+      --bg-gradient: radial-gradient(circle at top left, #ffffff 0, #f5f5fa 55%);
+      --text: #050509;
+      --muted: #55556a;
+      --accent: #c86a16;
+      --accent-soft: rgba(200, 106, 22, 0.08);
+      --card-bg: rgba(255, 255, 255, 0.9);
+      --border-subtle: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 24px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--accent);
+      left: 0;
+      bottom: -4px;
+    }
+
+    .toggle-btn {
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--muted);
+      padding: 6px 12px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    main {
+      flex: 1;
+      padding: 40px 24px 48px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 16px;
+    }
+
+    .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-size: clamp(36px, 4vw, 44px);
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .intro {
+      max-width: 640px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 16px 16px 0;
+      }
+      main {
+        padding: 32px 16px 40px;
+      }
+    }
+
+    .section {
+      padding: 20px 20px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+      background: var(--card-bg);
+    }
+
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .section-body {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .section-body strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(242, 163, 58, 0.28);
+    }
+
+    .value-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .value-item-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .muted-small {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .step-label {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .step-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .cta-box {
+      margin-top: 24px;
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      border: 1px dashed var(--border-subtle);
+      background: linear-gradient(
+        135deg,
+        rgba(242, 163, 58, 0.05),
+        rgba(242, 163, 58, 0)
+      );
+    }
+
+    .cta-title {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
+
+    .cta-text {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.6);
+      background: var(--accent);
+      color: #1b1206;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      filter: brightness(1.05);
+    }
+
+    footer {
+      width: 100%;
+      padding: 0 24px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .footer-inner {
+      width: 100%;
+      max-width: var(--max-width);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--muted);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 12px;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 640px) {
+      footer {
+        padding: 0 16px 16px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="logo">
+          SHIR <span>ALHANATI</span>
+        </div>
+        <div class="nav-links">
+          <a href="/" >Home</a>
+          <a href="/#work">Work</a>
+          <a href="/about.html" class="active">About</a>
+          <a href="mailto:shiralhanati@icloud.com?subject=Start%20a%20project">Contact</a>
+          <button class="toggle-btn" id="themeToggle">Dark mode</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="tag">
+          <span class="tag-dot"></span>
+          About
+        </div>
+        <h1>Designing online stores that respect both your customer and your bottom line.</h1>
+        <p class="intro">
+          I’m Shir Alhanati, an e‑commerce designer &amp; developer who builds online
+          stores that actually sell. I help product‑based brands turn casual
+          visitors into confident buyers with conversion‑driven UX, sharp
+          messaging and clean, fast development.
+        </p>
+
+        <div class="layout">
+          <!-- Left column -->
+          <section class="section">
+            <div class="section-title">Design · UX · Development</div>
+            <div class="section-body">
+              For the past years, I’ve been working at the intersection of
+              <strong>design, UX and development</strong>. I partner with founders
+              and small to mid‑size brands who are ready to treat their online
+              store as a real sales channel – not just a pretty brochure.
+              <br /><br />
+              Instead of handing your project off to three different people, you
+              get one partner who cares about the full journey: strategy, user
+              experience, visual design and the technical implementation that
+              makes it all feel seamless.
+              <div class="pill-list">
+                <div class="pill">E‑commerce UX</div>
+                <div class="pill">Conversion‑focused design</div>
+                <div class="pill">Front‑end development</div>
+                <div class="pill">Shopify / WordPress</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Right column -->
+          <section class="section">
+            <div class="section-title">Why clients work with me</div>
+            <div class="section-body value-list">
+              <div>
+                <div class="value-item-title">Strategic, not just aesthetic</div>
+                I don’t design for “pretty”. Every layout, section and piece of
+                microcopy is tied to a clear goal – more people understanding your
+                product, trusting your brand and clicking “add to cart”.
+              </div>
+              <div>
+                <div class="value-item-title">UX that feels natural</div>
+                Good e‑commerce UX should almost disappear. I design stores that
+                are easy to browse, compare and buy from – especially on mobile,
+                where most of your traffic actually lands.
+              </div>
+              <div>
+                <div class="value-item-title">Design that fits your brand</div>
+                There is no one universal template. Together, we shape a visual
+                language that feels like you – typography, color, product layout
+                and the way we tell your story.
+              </div>
+              <div>
+                <div class="value-item-title">Development you don’t have to babysit</div>
+                From Shopify and WordPress to custom front‑end builds, I develop
+                your store to be fast, responsive and manageable, so you can keep
+                things updated without fighting the tech.
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="layout" style="margin-top: 20px;">
+          <!-- Left column: story -->
+          <section class="section">
+            <div class="section-title">My path into e‑commerce</div>
+            <div class="section-body">
+              I didn’t come from a world of pure “art for art’s sake”. My background
+              combines <strong>graphic design, UX and economics</strong>, so I naturally
+              think in terms of user behavior, incentives and the bottom line.
+              <br /><br />
+              Over time, I saw the same pattern again and again: beautiful online
+              stores that simply didn’t convert. That’s when I decided to focus on
+              e‑commerce – designing experiences that respect both the customer’s
+              time and the brand’s business goals.
+              <br /><br />
+              Today, every project is a collaboration. You bring your product
+              expertise, I bring the UX, design and development – and together we
+              build a store that feels good to use and makes it easier for people
+              to say “yes”.
+            </div>
+          </section>
+
+          <!-- Right column: process -->
+          <section class="section">
+            <div class="section-title">How we’ll work together</div>
+            <div class="section-body steps">
+              <div>
+                <div class="step-label">Step 1</div>
+                <div class="step-title">Discovery &amp; strategy</div>
+                We start with a focused conversation about your business, your
+                customers and what “success” means for this project. From there we
+                map the structure of the site, key pages and the main user
+                journeys we need to support.
+              </div>
+              <div>
+                <div class="step-label">Step 2</div>
+                <div class="step-title">UX &amp; content structure</div>
+                I create wireframes that define the layout, hierarchy and
+                messaging blocks for your store – from homepage and collection
+                pages to product pages, cart and checkout.
+              </div>
+              <div>
+                <div class="step-label">Step 3</div>
+                <div class="step-title">Visual design</div>
+                Once the structure is clear, we translate it into a visual system:
+                typography, colors, components and interactions that match your
+                brand and keep the experience consistent across devices.
+              </div>
+              <div>
+                <div class="step-label">Step 4</div>
+                <div class="step-title">Development &amp; launch</div>
+                I build your store on the right platform, optimize performance and
+                connect the tools you rely on – analytics, email, payment and
+                shipping. We launch only after testing the critical flows.
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="cta-box">
+          <div class="cta-title">Ready to upgrade your store?</div>
+          <div class="cta-text">
+            If you’re ready to turn your online store into a clear, focused sales
+            engine, I’d love to hear about your brand. Tell me about your
+            products, your challenges and your goals – and we’ll see if we’re a
+            good fit to work together.
+          </div>
+          <a class="cta-btn" href="mailto:shiralhanati@icloud.com?subject=Start%20a%20project">
+            Book a call
+          </a>
+          <div class="muted-small">
+            No hard sales pitch – just an honest conversation about what your store needs next.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© 2026 · Shir Alhanati</div>
+        <div>E‑commerce designer &amp; developer</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const toggleBtn = document.getElementById('themeToggle');
+    let currentTheme = localStorage.getItem('theme') || 'dark';
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      toggleBtn.textContent = theme === 'light' ? 'Light mode' : 'Dark mode';
+    }
+
+    applyTheme(currentTheme);
+
+    toggleBtn.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', currentTheme);
+      applyTheme(currentTheme);
+    });
+  </script>
+</body>
+</html>
