@@ -511,23 +511,37 @@
     </footer>
   </div>
 
-  <script>
-    const root = document.documentElement;
-    const toggleBtn = document.getElementById('themeToggle');
-    let currentTheme = localStorage.getItem('theme') || 'dark';
+ <script>
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  let currentTheme = localStorage.getItem('theme') || 'dark';
 
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      toggleBtn.textContent = theme === 'light' ? 'Light mode' : 'Dark mode';
-    }
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    // הטקסט על הכפתור: מה יקרה *אחרי* שלוחצים
+    toggleBtn.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
+  }
 
+  applyTheme(currentTheme);
+
+  toggleBtn.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
     applyTheme(currentTheme);
+  });
 
-    toggleBtn.addEventListener('click', () => {
-      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', currentTheme);
-      applyTheme(currentTheme);
+  // אם את משתמשת ב-reveal בדף הבית:
+  const reveals = document.querySelectorAll('.reveal');
+  function checkReveals() {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight) {
+        el.classList.add('active');
+      }
     });
-  </script>
+  }
+  window.addEventListener('scroll', checkReveals);
+  checkReveals();
+</script>
 </body>
 </html>
