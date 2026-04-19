@@ -361,35 +361,37 @@ footer {
 </div>
 
 <script>
-const reveals = document.querySelectorAll('.reveal');
+  const root = document.documentElement;
+  const toggleBtn = document.getElementById('themeToggle');
+  let currentTheme = localStorage.getItem('theme') || 'dark';
 
-function checkReveals() {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight) {
-      el.classList.add('active');
-    }
-  });
-}
+  function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    toggleBtn.textContent = theme === 'light' ? 'Light mode' : 'Dark mode';
+  }
 
-window.addEventListener('scroll', checkReveals);
-checkReveals();
-
-const toggleBtn = document.getElementById('theme-toggle');
-const root = document.documentElement;
-let currentTheme = root.dataset.theme || 'dark';
-
-function applyTheme(theme) {
-  root.setAttribute('data-theme', theme);
-  toggleBtn.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
-}
-
-applyTheme(currentTheme);
-
-toggleBtn.addEventListener('click', () => {
-  currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
   applyTheme(currentTheme);
-});
+
+  toggleBtn.addEventListener('click', () => {
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
+    applyTheme(currentTheme);
+  });
+
+  // האנימציה של .reveal – תשאירי אם את משתמשת בה:
+  const reveals = document.querySelectorAll('.reveal');
+
+  function checkReveals() {
+    reveals.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight) {
+        el.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', checkReveals);
+  checkReveals();
 </script>
 
 </body>
